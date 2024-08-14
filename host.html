@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Independence Day</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .loader-flag {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(to bottom right, #ff9933, #ffffff, #128807);
+            color: #ffffff;
+            text-align: center;
+            margin: auto;
+            animation: loading 10s linear forwards;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .loading-percent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            font-family: monospace;
+            z-index: 1;
+        }
+
+        h1 {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -75%);
+            color: #000080;
+            font-size: 32px;
+            font-family: cursive;
+            text-shadow: 1px 1px 2px #ffffff;
+            transition: opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .main-page {
+            display: none;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .container .sound-container {
+            display: flex;
+            justify-content: flex-start;
+            height: 100vh;
+            width: 30%;
+        }
+
+        .container .sound-container .audio-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            cursor: pointer;
+        }
+
+        .container .flag-container .loaded {
+            animation: flagHosting 2s forwards;
+        }
+
+        .container .pole {
+            height: 99vh;
+            width: 20px;
+            background-color: #222222;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            align-self: flex-end;
+            z-index: 5;
+        }
+
+        .container .flag-container {
+            height: 100vh;
+            width: 40%;
+        }
+
+        .container .flag-container .ribbon {
+            position: relative;
+            top: 500px;
+            left: -10px;
+            cursor: pointer;
+            z-index: 30;
+        }
+
+        .container .flag-container .ribbon .ribbon-head {
+            height: 10px;
+            width: 30px;
+            background-color: #ff0000;
+        }
+
+        .container .flag-container .ribbon .ribbon-tail {
+            position: relative;
+            top: -20px;
+            left: -3px;
+        }
+
+        .container .flag-container .ribbon .ribbon-tail .ribbon-left {
+            position: relative;
+            top: 20px;
+            left: 0px;
+            height: 5px;
+            width: 55px;
+            background-color: #ff0000;
+            border: 1px solid #ff0000;
+            transform: rotate(37deg);
+        }
+
+        .container .flag-container .ribbon .ribbon-tail .ribbon-right {
+            position: relative;
+            top: -5px;
+            height: 5px;
+            width: 55px;
+            background-color: #ff0000;
+            border: 1px solid #ff0000;
+            transform: rotate(-37deg);
+        }
+
+        .container .flag-container .flag {
+            position: relative;
+            top: 350px;
+            left: -15px;
+            display: flex;
+            flex-direction: row;
+            height: 550px;
+        }
+
+        .container .flag-container .flag .waving-flag {
+            position: relative;
+            left: -15px;
+            display: block;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.1s, opacity 0.1s linear;
+            z-index: 3;
+        }
+
+        .stripe {
+            height: 100px;
+            width: 150px;
+            animation: unwrappingFlag 2s 3s forwards, flyingFlag 6.5s 5s infinite;
+        }
+
+        .saffron-stripe {
+            background-color: #ff9933;
+        }
+
+        .white-stripe {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+
+        #ashok-chakra {
+            opacity: 0;
+            transform: scale(2);
+            animation: showingAshokChakra 0.5s 3.5s forwards, rotatingAshokChakra 6.5s infinite;
+        }
+
+        .green-stripe {
+            background-color: #128807;
+        }
+
+        .container .flag-container .flag .folded-flag {
+            position: absolute;
+            top: 0%;
+            left: 2.75%;
+            transform: translateX(-3%) translateY(-20%);
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 0.2s, opacity 0.2s linear;
+            z-index: 15;
+        }
+
+        .container .flag-container .flag .folded-flag .colored {
+            height: 50px;
+            width: 30px;
+        }
+
+        .container .flag-container .flag .folded-flag .saffron {
+            background-color: #ff9933;
+        }
+
+        .container .flag-container .flag .folded-flag .white {
+            background-color: #ffffff;
+        }
+
+        .container .flag-container .flag .folded-flag .green {
+            background-color: #128807;
+        }
+
+        @keyframes flagHosting {
+            from { top: 50%; }
+            to { top: 0; }
+        }
+
+        @keyframes unwrappingFlag {
+            from { width: 10%; }
+            to { width: 100%; }
+        }
+
+        @keyframes flyingFlag {
+            0%, 100% { transform: skewX(0deg); }
+            25% { transform: skewX(5deg); }
+            75% { transform: skewX(-5deg); }
+        }
+
+        @keyframes showingAshokChakra {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes rotatingAshokChakra {
+            from { transform: rotate(0deg) scale(0.1); }
+            to { transform: rotate(360deg) scale(0.1); }
+        }
+
+        .firework {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0.5vmin;
+            aspect-ratio: 1;
+            background: radial-gradient(circle, #ff0 0.2vmin, #0000 0) 50% 0,
+                        radial-gradient(circle, #ff0 0.3vmin, #0000 0) 0 50%,
+                        radial-gradient(circle, #ff0 0.5vmin, #0000 0) 100% 50%;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            animation: firework 1s infinite;
+        }
+
+        @keyframes firework {
+            0% { transform: translate(-50%, -50%) rotate(0deg) scale(0); opacity: 1; }
+            100% { transform: translate(-50%, -50%) rotate(180deg) scale(1); opacity: 0; }
+        }
+
+        .clouds {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            transform: translateZ(0);
+        }
+
+        .cloud {
+            position: absolute;
+            background: #fff;
+            border-radius: 100px;
+        }
+
+        .cloud:before, .cloud:after {
+            content: '';
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        #sound-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader-flag"></div>
+    <div class="loading-percent"><span>0%</span></div>
+    <h1>Happy Independence Day</h1>
+    <div class="main-page">
+        <div class="container">
+            <div class="sound-container">
+                <div class="audio-wrapper">
+                    <audio id="national-anthem" loop>
+                        <source src="https://upload.wikimedia.org/wikipedia/commons/9/94/Jana_Gana_Mana_instrumental.ogg" type="audio/ogg">
+                    </audio>
+                </div>
+            </div>
+            <div class="pole"></div>
+            <div class="flag-container">
+                <div class="ribbon">
+                    <div class="ribbon-head"></div>
+                    <div class="ribbon-tail">
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-right"></div>
+                    </div>
+                    <div class="ribbon-tag"></div>
+                </div>
+                <div class="flag">
+                    <div class="waving-flag">
+                        <div>
+                            <div class="stripe saffron-stripe"></div>
+                            <div class="stripe white-stripe">
+                                <img id="ashok-chakra" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Ashoka_Chakra.svg/1024px-Ashoka_Chakra.svg.png" alt="image ashok chakra">
+                            </div>
+                            <div class="stripe green-stripe"></div>
+                        </div>
+                    </div>
+                    <div class="folded-flag">
+                        <div class="colored saffron"></div>
+                        <div class="colored white"></div>
+                        <div class="colored green"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clouds"></div>
+    <button id="sound-toggle">🔊</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var element = $(".loader-flag");
+        var widthPercent = 1;
+        var color = ["#ff9933", "#ffffff", "#128807"];
+
+        function loadingFunc() {
+            loadingPercent = widthPercent + "%";
+            $(".loading-percent>span").html(loadingPercent).css("color", color[widthPercent % 3]);
+            widthPercent++;
+            if (widthPercent <= 100) {
+                setTimeout(loadingFunc, 100);
+            } else {
+                $(".loader-flag").hide(500);
+                $(".loading-percent>span").html("");
+                $(".main-page").css("display", "block");
+                createClouds();
+            }
+        }
+
+        loadingFunc();
+
+        function createClouds() {
+            var cloudsContainer = $('.clouds');
+            for (var i = 0; i < 10; i++) {
+                var cloud = $('<div>').addClass('cloud');
+                cloud.css({
+                    left: Math.random() * 100 + '%',
+                    top: Math.random() * 50 + '%',
+                    width: Math.random() * 100 + 50,
+                    height: Math.random() * 30 + 20,
+                    animationDuration: (Math.random() * 10 + 10) + 's',
+                    animationDelay: (Math.random() * 10) + 's'
+                });
+                cloudsContainer.append(cloud);
+            }
+        }
+
+        function createFirework() {
+            var firework = $('<div>').addClass('firework');
+            firework.css({
+                left: Math.random() * 100 + '%',
+                top: Math.random() * 100 + '%'
+            });
+            $('body').append(firework);
+            setTimeout(function() {
+                firework.remove();
+            }, 1000);
+        }
+
+        $("document").ready(function () {
+            $('.ribbon').click(function () {
+                $('.flag-container .flag').addClass('loaded');
+                $('.ribbon').css({ 'visibility': 'hidden', 'opacity': 0 });
+                var opacityOfFoldedFlag = 0;
+                setTimeout(function () {
+                    $('.folded-flag').css({ 'visibility': 'hidden', 'opacity': 0 });
+                    opacityOfFoldedFlag = $('.folded-flag').css('opacity');
+                    if (opacityOfFoldedFlag == 1) {
+                        $('.flag-container .flag').css({ 'display': 'block', 'left': 0, 'top': 0, 'position': 'initial' });
+                        $("h1").css('opacity', 1);
+                        $('.waving-flag').css({ 'visibility': 'visible', 'opacity': 1 });
+                        var playNationalAnthem = document.getElementById("national-anthem");
+                        playNationalAnthem.play();
+                        setInterval(createFirework, 500);
+                    }
+                }, 1000);
+            });
+
+            $('#sound-toggle').click(function() {
+                var anthem = document.getElementById("national-anthem");
+                if (anthem.paused) {
+                    anthem.play();
+                    $(this).text('🔊');
+                } else {
+                    anthem.pause();
+                    $(this).text('🔇');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

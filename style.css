@@ -1,0 +1,671 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: linear-gradient(to bottom, #ee6c0e, #cccccc, #3dcb10);
+}
+
+a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+a:hover {
+    color: #23527c;
+}
+
+/* Header Styles */
+header {
+    background-color: #f0f0f0;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    font-size: 18px;
+}
+
+/* Hero Section Styles */
+#hero {
+    background-image: linear-gradient(to bottom, #ee6c0e, #cccccc, #3dcb10);
+    background-size: 100% 300px;
+    background-position: 0% 100%;
+    padding: 2em;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#hero button {
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#hero button:hover {
+    background-color: #23527c;
+}
+
+/* History Section Styles */
+#history {
+    padding: 2em;
+}
+
+#history h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#history p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#history ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#history li {
+    margin-bottom: 10px;
+}
+
+/* Freedom Fighters Section Styles */
+#freedom-fighters {
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    gap: 20px; /* Space between items */
+    justify-content: center;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+    object-fit: contain;
+    object-position: top;
+}
+
+/* Photo Gallery Section Styles */
+#photo-gallery {
+    padding: 2em;
+}
+
+#photo-gallery h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    gap: 10px; /* Space between items */
+    margin: 20px;
+}
+
+.gallery-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 10px); /* Adjust width based on gaps */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Events Section Styles */
+#events {
+    padding: 2em;
+}
+
+#events h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#events ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#events li {
+    margin-bottom: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f0f0f0;
+    padding: 1em;
+    text-align: center;
+    clear: both;
+}
+
+footer p {
+    font-size: 18px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 760px) {
+    .gallery-item {
+        width: calc(50% - 10px); /* Adjust width based on gaps */
+    }
+    .parent  {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .parent .div1
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div2
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div3
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div4
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div5
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div6
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div7
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div8
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div9
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div10
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div11
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div12
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div13
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div14
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div15
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div16
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div17
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div18
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div19
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div20
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div21
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div22
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div23
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div24
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div25
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div26
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div27
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div28
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div29
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent .div30
+    {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .gallery-item {
+        width: calc(100% - 10px); /* Adjust width based on gaps */
+    }
+    .parent {
+        flex-direction: column; /* Stack items vertically */
+    }
+    .timeline {
+        flex-direction: column; /* Stack items vertically */
+    }
+}
+
+/* Additional Styles */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.event {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event h2 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.event p {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.parent {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    gap: 10px; /* Space between items */
+}
+
+.parent div {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: calc(20% - 10px); /* Adjust width based on gaps */
+}
+
+/* Image Styles */
+img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.flag-image {
+    width: 200px;
+    height: 150px;
+    margin: 20px;
+}
+
+.history-image {
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+}
+
+.timeline-image, .event-image, .gallery-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade-in 1s ease-in-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.slide-in {
+    animation: slide-in 1s ease-in-out;
+}
+
+/* Additional Styles for Lists */
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #f7f7f7;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+li b {
+    font-size: 18px;
+    color: #23527c;
+}
+
+li:hover {
+    background-color: #337ab7;
+    color: #fff;
+}
+
+li:hover b {
+    color: #fff;
+}
+
+.conclusion {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Absolute Centered Element */
+.absolute {
+    background-image: linear-gradient(to bottom, #ee6c0e, #cccccc, #3dcb10);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation: fadeOut 10s forwards;
+}
+
+.absolute img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
